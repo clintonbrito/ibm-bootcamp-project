@@ -17,8 +17,7 @@ services:
     volumes:
       - ./backend/src:/app-backend/src
     depends_on:
-      - db:
-          condition: service_healthy
+      - db
     environment:
       - APP_PORT=8080
       - DB_HOST=db
