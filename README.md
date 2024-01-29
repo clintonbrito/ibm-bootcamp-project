@@ -1,6 +1,6 @@
 # IBM Bootcamp Project
 
-This web application is a Financial Transaction Manager can register transactions, delete them, update a transaction, and retrieve all transactions, including the categorization total. Filtering by date is a feature that might be considered for future implementation.
+This web application is a Financial Transaction Manager that can record transactions, delete them, update a transaction, and retrieve all transactions, including the categorization total. Filtering by date is a feature that might be considered for future implementation.
 
 <br>
 

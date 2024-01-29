@@ -1,0 +1,12 @@
+# .dockerignore
+
+# Arquivos e diretórios específicos do Maven
+target/
+**/target/
+
+# Outros arquivos e diretórios que podem ser excluídos
+.DS_Store
+.idea/
+*.iml
+*.log
+*.tmp
