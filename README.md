@@ -30,7 +30,7 @@ cd ibm-bootcamp-project
 
 Open your browser and access the application through the address below to view the interface locally:
 
-<pre><code>http://localhost:3000</code></pre>
+<pre><code>http://localhost:4200</code></pre>
 
 <br>
 
