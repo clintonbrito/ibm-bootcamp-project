@@ -24,7 +24,7 @@ This project was developed using:
 <pre><code>git clone git@github.com:clintonbrito/ibm-bootcamp-project.git
 cd ibm-bootcamp-project
 </code></pre>
-<p>Run this command to create project's Docker container and install the dependencies:</p>
+<p>Run this command to create all the project's Docker containers and install the dependencies:</p>
 
 <pre><code>npm run compose:up</code></pre>
 

@@ -1,0 +1,48 @@
+<mat-card>
+
+  <mat-card-content>
+
+    <mat-toolbar color="primary">Expense Details</mat-toolbar>
+
+    <form [formGroup]="form" class="min-width">
+
+      <mat-form-field class="full-width">
+        <mat-label>Expense description</mat-label>
+        <input matInput formControlName="description">
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Amount</mat-label>
+        <input matInput formControlName="amount" type="number">
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Date</mat-label>
+        <input matInput formControlName="date" type="date">
+      </mat-form-field>
+
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Category</mat-label>
+
+        <mat-select formControlName="category">
+          <mat-option value="null"></mat-option>
+          <mat-option value="food">Food</mat-option>
+          <mat-option value="transport">Transport</mat-option>
+          <mat-option value="health">Health</mat-option>
+          <mat-option value="education">Education</mat-option>
+          <mat-option value="entertainment">Entertainment</mat-option>
+          <mat-option value="others">Others</mat-option>
+        </mat-select>
+
+      </mat-form-field>
+
+    </form>
+
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="onSubmit()">SAVE</button>
+    <button mat-raised-button (click)="onCancel()">CANCEL</button>
+  </mat-card-actions>
+
+</mat-card>
