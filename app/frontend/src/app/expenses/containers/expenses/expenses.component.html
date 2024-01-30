@@ -1,0 +1,22 @@
+<mat-card>
+  <mat-card-content>
+    <mat-toolbar color="primary">Current Expenses</mat-toolbar>
+
+    <div class="column-flex mat-elevation-z8">
+      <app-expenses-list
+        *ngIf="expenses$ | async as expenses; else loading"
+        [expenses]="expenses"
+        (add)="onAdd()"
+        (edit)="onEdit($event)"
+        (delete)="onDelete($event)"
+      ></app-expenses-list>
+
+      <ng-template #loading>
+        <div class="loading-spinner">
+          <mat-spinner></mat-spinner>
+        </div>
+      </ng-template>
+    </div>
+
+  </mat-card-content>
+</mat-card>
