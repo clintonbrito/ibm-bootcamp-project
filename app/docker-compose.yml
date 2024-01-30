@@ -43,8 +43,8 @@ services:
       MYSQL_USER: usuariocomum
       MYSQL_PASSWORD: 12345678
       MYSQL_ROOT_PASSWORD: 12345678
-    # volumes:
-    #   - db:/var/lib/mysql
+    volumes:
+      - $PWD/init.sql:/docker-entrypoint-initdb.d/init.sql
     # healthcheck:
     #   test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
     #   interval: 10s

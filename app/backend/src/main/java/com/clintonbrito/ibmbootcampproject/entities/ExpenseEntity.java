@@ -11,7 +11,7 @@ import java.util.Date;
 public class ExpenseEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
 
@@ -23,9 +23,10 @@ public class ExpenseEntity {
     @Column(name = "amount", nullable = false)
     private Double amount;
 
-    @ManyToOne
-    @JoinColumn(name = "category_id", nullable = false)
-    @Column(name = "category", nullable = false, length = 100)
+    @OneToOne
+    // @JoinColumn(name = "category_id", nullable = false)
+    // @Column(name = "category", nullable = false, length = 100)
+    @JoinColumn
     private CategoryEntity category;
 
     @Column(name = "date", nullable = false)

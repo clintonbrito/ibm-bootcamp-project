@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class InsertCategories {
 	@Bean
-	CommandLineRunner insertCategories(CategoryRepository repository) {
+	CommandLineRunner insertCategoriesMethod(CategoryRepository repository) {
 		return args -> {
 			String[] categories = {"Food", "Transport", "Health", "Education", "Entertainment", "Others"};
 

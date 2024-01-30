@@ -9,7 +9,7 @@ import lombok.Data;
 public class CategoryEntity {
 
     @Id
-    @GeneratedValue(strategy = jakarta.persistence.GenerationType.AUTO)
+    @Column(name = "id")
     private Long id;
 
     @Column(name = "name", nullable = false, length = 30)
