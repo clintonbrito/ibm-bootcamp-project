@@ -21,16 +21,21 @@ This project was developed using:
 ## 🚀 Getting started locally
 
 <p style>Clone this repository to your local machine and access the cloned directory:</p>
+
 <pre><code>git clone git@github.com:clintonbrito/ibm-bootcamp-project.git
-cd ibm-bootcamp-project
-</code></pre>
+cd ibm-bootcamp-project</code></pre>
+
 <p>Run this command to create all the project's Docker containers and install the dependencies:</p>
 
 <pre><code>npm run compose:up</code></pre>
 
-Open your browser and access the application through the address below to view the interface locally:
+<p>If you need to stop and remove the project's Docker containers, you can use the following command:</p>
 
-<pre><code>http://localhost:4200</code></pre>
+<pre><code>npm run compose:down</code></pre>
+
+Check the front-end docker logs using the command `docker logs -f app_frontend` which address is running the application and open your browser and access the application through the address below to view the interface locally, for example:
+
+<pre><code>http://172.25.0.4:4200/</code></pre>
 
 <br>
 
