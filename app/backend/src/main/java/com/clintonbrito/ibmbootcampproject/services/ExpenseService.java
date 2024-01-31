@@ -3,17 +3,10 @@ package com.clintonbrito.ibmbootcampproject.services;
 import com.clintonbrito.ibmbootcampproject.dto.ExpenseRequestDTO;
 import com.clintonbrito.ibmbootcampproject.entities.ExpenseEntity;
 import com.clintonbrito.ibmbootcampproject.repositories.ExpenseRepository;
-import jakarta.annotation.PostConstruct;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
-import org.springframework.jdbc.core.JdbcTemplate;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.List;
 import java.util.Optional;
 
@@ -40,7 +33,7 @@ public class ExpenseService {
         ExpenseEntity expenseEntity = new ExpenseEntity();
         expenseEntity.setDescription(expenseDTO.getDescription());
         expenseEntity.setAmount(expenseDTO.getAmount());
-        expenseEntity.setCategory(expenseDTO.getCategoryEntity());
+        expenseEntity.setCategory(expenseDTO.getCategory());
         expenseEntity.setDate(expenseDTO.getDate());
 
         return expenseRepository.save(expenseEntity);
@@ -53,7 +46,7 @@ public class ExpenseService {
         }
         expenseToUpdate.get().setDescription(expenseDTO.getDescription());
         expenseToUpdate.get().setAmount(expenseDTO.getAmount());
-        expenseToUpdate.get().setCategory(expenseDTO.getCategoryEntity());
+        expenseToUpdate.get().setCategory(expenseDTO.getCategory());
         expenseToUpdate.get().setDate(expenseDTO.getDate());
 
         return expenseRepository.save(expenseToUpdate.get());
