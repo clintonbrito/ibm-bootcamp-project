@@ -2,7 +2,9 @@ package com.clintonbrito.ibmbootcampproject.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.springframework.data.annotation.CreatedDate;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Data // está incluso os getters e setters do Lombok
@@ -23,12 +25,12 @@ public class ExpenseEntity {
     @Column(name = "amount", nullable = false)
     private Double amount;
 
-    @OneToOne
-    // @JoinColumn(name = "category_id", nullable = false)
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "category_id", referencedColumnName = "id")
     // @Column(name = "category", nullable = false, length = 100)
-    @JoinColumn
     private CategoryEntity category;
 
+    @CreatedDate
     @Column(name = "date", nullable = false)
-    private Date date;
+    private LocalDate date;
 }

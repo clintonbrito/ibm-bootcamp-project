@@ -1,0 +1,23 @@
+meta {
+  name: Nova Despesa
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:8080/api/expenses
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "description": "description_023ca3bc4f6e",
+    "amount": 10.00,
+    "categoryEntity": {
+      "id": 1,
+      "name": "Food"
+    },
+    "date": "2024-01-30"
+  }
+}
