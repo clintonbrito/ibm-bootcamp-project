@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { catchError, Observable, of } from 'rxjs';
@@ -12,7 +12,7 @@ import { ExpensesService } from '../../services/expenses.service';
   templateUrl: './expenses.component.html',
   styleUrl: './expenses.component.scss'
 })
-export class ExpensesComponent implements OnInit {
+export class ExpensesComponent {
 
   expenses$: Observable<Expense[]>;
 
@@ -23,7 +23,7 @@ export class ExpensesComponent implements OnInit {
     private route: ActivatedRoute
   ) {
     this.expenses$ = expensesService.findAll()
-      .pipe(catchError(error => {
+      .pipe(catchError(_error => {
         this.onError('Error loading expenses.');
       // console.error(error);
       return of([]);
@@ -49,9 +49,6 @@ export class ExpensesComponent implements OnInit {
       .subscribe(() => {
         this.expenses$ = this.expensesService.findAll();
       });
-  }
-
-  ngOnInit(): void {
   }
 
 }

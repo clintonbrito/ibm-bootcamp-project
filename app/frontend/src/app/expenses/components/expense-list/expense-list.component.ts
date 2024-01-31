@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+
 import { Expense } from '../../model/expense';
 
 @Component({
@@ -6,7 +7,7 @@ import { Expense } from '../../model/expense';
   templateUrl: './expense-list.component.html',
   styleUrls: ['./expense-list.component.scss']
 })
-export class ExpensesListComponent implements OnInit {
+export class ExpensesListComponent {
 
   @Input() expenses: Expense[] = [];
   @Output() add = new EventEmitter<boolean>();
@@ -14,9 +15,6 @@ export class ExpensesListComponent implements OnInit {
   @Output() delete = new EventEmitter<Expense>();
 
   readonly displayedColumns = ['description', 'amount', 'date', 'category', 'actions'];
-
-  ngOnInit(): void {
-  }
 
   onAdd() {
     this.add.emit(true);
