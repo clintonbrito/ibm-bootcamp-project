@@ -41,7 +41,7 @@ export class ExpensesComponent implements OnInit {
   }
 
   onEdit(expense: Expense) {
-    this.router.navigate([expense.id], { relativeTo: this.route });
+    this.router.navigate(['edit', expense.id], { relativeTo: this.route });
   }
 
   onDelete(expense: Expense) {
