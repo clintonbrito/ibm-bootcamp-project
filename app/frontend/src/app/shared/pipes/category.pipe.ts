@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class CategoryPipe implements PipeTransform {
 
-  transform(value: string, ...args: unknown[]): string {
+  transform(value: string, ..._args: unknown[]): string {
     switch (value) {
       case 'food': return 'restaurant';
       case 'transport': return 'directions_bus';
