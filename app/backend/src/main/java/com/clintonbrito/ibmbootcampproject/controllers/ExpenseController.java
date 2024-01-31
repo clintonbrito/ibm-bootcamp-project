@@ -1,5 +1,6 @@
 package com.clintonbrito.ibmbootcampproject.controllers;
 
+import com.clintonbrito.ibmbootcampproject.dto.ExpenseRequestDTO;
 import com.clintonbrito.ibmbootcampproject.entities.ExpenseEntity;
 import com.clintonbrito.ibmbootcampproject.services.ExpenseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,29 +39,21 @@ public class ExpenseController {
     }
 
     @PostMapping
-    public ResponseEntity<ExpenseEntity> create(@RequestBody ExpenseEntity expense) {
-        ExpenseEntity savedExpense = expenseService.saveOrUpdateExpense(expense);
+    public ResponseEntity<ExpenseEntity> create(@RequestBody ExpenseRequestDTO expense) {
+        ExpenseEntity savedExpense = expenseService.saveExpense(expense);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(savedExpense);
     }
 
 
     @PutMapping("/{id}")
-    public ResponseEntity<ExpenseEntity> update(@PathVariable Long id, @RequestBody ExpenseEntity expense) {
+    public ResponseEntity<ExpenseEntity> update(@PathVariable Long id, @RequestBody ExpenseRequestDTO expenseDTO) {
         Optional<ExpenseEntity> expenseToUpdate = expenseService.getExpenseById(id);
 
-        if (expenseToUpdate.isPresent()) {
-            expenseToUpdate.get().setDescription(expense.getDescription());
-            expenseToUpdate.get().setAmount(expense.getAmount());
-            expenseToUpdate.get().setCategory(expense.getCategory());
-            expenseToUpdate.get().setDate(expense.getDate());
+        ExpenseEntity updatedExpense = expenseService.updateExpense(expenseToUpdate, expenseDTO);
 
-            ExpenseEntity updatedExpense = expenseService.saveOrUpdateExpense(expenseToUpdate.get());
+        return ResponseEntity.status(HttpStatus.OK).body(updatedExpense);
 
-            return ResponseEntity.status(HttpStatus.OK).body(updatedExpense);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
     }
 
     @DeleteMapping("/{id}")
