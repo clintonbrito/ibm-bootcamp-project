@@ -1,6 +1,6 @@
 # IBM Bootcamp Project
 
-This web application is a Financial Transaction Manager that can record transactions, delete them, update a transaction, and retrieve all transactions, including the categorization total. Filtering by date is a feature that might be considered for future implementation.
+This web application is a Financial Transaction Manager developed from scratch. It allows users to record transactions, delete them, update transaction details, and retrieve a comprehensive list of all transactions. Consideration for implementing date filtering and categorized totals are potential features for future updates.
 
 <br>
 
@@ -38,6 +38,30 @@ Check the front-end docker logs using the command `docker logs -f app_frontend` 
 <pre><code>http://172.25.0.4:4200/</code></pre>
 
 <br>
+
+## 🎨 Development Patterns
+
+### Commit Patterns
+
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
+
+This project adopts the commit convention known as [Conventional Commits](https://www.conventionalcommits.org/). This means that we follow a standardized format for our commit messages, making it easier to generate changelogs and adopt semantic versioning.
+
+Example commit message format:
+
+<pre><code>feat: add login functionality
+fix: resolve issue with user registration
+wip: connecting back-end to front-end</code></pre>
+
+### Branch Patterns
+
+The branches in this project follow a specific pattern to facilitate organization and understanding of ongoing development. Some of the common prefixes used include `feature/`, `bugfix/`, `docs/`:
+
+Example branch name:
+
+<pre><code>feature/docker-setup
+bugfix/eslint-errors
+docs/update-readme</code></pre>
 
 ## 📝 License
 This project is licensed under the MIT License. See the <a target="_blank" rel="noopener" href="https://github.com/clintonbrito/recipes-app/blob/5c4b1a74ab43a352c393def783f06080b7256088/LICENSE">LICENSE</a> file for details.
