@@ -10,6 +10,7 @@ This project was developed using:
 
   ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
   ![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white)
+  ![Swagger](https://img.shields.io/badge/swagger-85EA2D.svg?style=for-the-badge&logo=swagger&logoColor=black)
   ![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white)
   ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
   ![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
@@ -36,6 +37,27 @@ cd ibm-bootcamp-project</code></pre>
 Check the front-end docker logs using the command `docker logs -f app_frontend` which address is running the application and open your browser and access the application through the address below to view the interface locally, for example:
 
 <pre><code>http://172.25.0.4:4200/</code></pre>
+
+<br>
+
+## 📖 API Documentation
+
+Explore the API documentation to understand the available endpoints, request parameters, and responses. The documentation is built using Swagger, which provides an interactive and user-friendly interface.
+
+### Accessing API Documentation
+
+1. **Run the Application:**
+   Make sure the application is running locally. Follow the [Getting Started](#-getting-started-locally) section for instructions on starting the application.
+
+2. **Open Swagger UI:**
+   Once the application is running, you can access the Swagger UI by navigating to the following URL in your web browser:
+
+<pre><code>http://localhost:8080/v1/api-ui</code></pre>
+
+3. **Explore Endpoints:**
+   In the Swagger UI, you'll find a list of available endpoints along with details about request parameters, expected responses, and sample requests. Use this interface to understand how to interact with the API.
+
+Feel free to explore and test the API directly from the Swagger UI. If you encounter any issues or have questions, refer to the [Issues](https://github.com/clintonbrito/ibm-bootcamp-project/issues) section for support.
 
 <br>
 
