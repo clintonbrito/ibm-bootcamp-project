@@ -3,7 +3,6 @@ package com.clintonbrito.ibmbootcampproject.services;
 import com.clintonbrito.ibmbootcampproject.dto.ExpenseRequestDTO;
 import com.clintonbrito.ibmbootcampproject.entities.ExpenseEntity;
 import com.clintonbrito.ibmbootcampproject.repositories.ExpenseRepository;
-
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -40,16 +39,20 @@ public class ExpenseService {
     }
 
     @Transactional
-    public ExpenseEntity updateExpense(Optional<ExpenseEntity> expenseToUpdate, ExpenseRequestDTO expenseDTO) {
-        if (expenseToUpdate.isEmpty()) {
+    public ExpenseEntity updateExpense(Long id, ExpenseRequestDTO expenseDTO) {
+        Optional<ExpenseEntity> expenseToUpdate = expenseRepository.findById(id);
+
+        if (expenseToUpdate.isPresent()) {
+            ExpenseEntity updatedExpense = expenseToUpdate.get();
+            updatedExpense.setDescription(expenseDTO.getDescription());
+            updatedExpense.setAmount(expenseDTO.getAmount());
+            updatedExpense.setCategory(expenseDTO.getCategory());
+            updatedExpense.setDate(expenseDTO.getDate());
+
+            return expenseRepository.save(updatedExpense);
+        } else {
             throw new RuntimeException("Expense not found");
         }
-        expenseToUpdate.get().setDescription(expenseDTO.getDescription());
-        expenseToUpdate.get().setAmount(expenseDTO.getAmount());
-        expenseToUpdate.get().setCategory(expenseDTO.getCategory());
-        expenseToUpdate.get().setDate(expenseDTO.getDate());
-
-        return expenseRepository.save(expenseToUpdate.get());
     }
 
     public void deleteExpense(Long id) {

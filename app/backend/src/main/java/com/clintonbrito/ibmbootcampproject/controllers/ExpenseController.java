@@ -13,7 +13,7 @@ import java.util.Optional;
 
 @CrossOrigin("*")
 @RestController
-@RequestMapping("/api/expenses")
+@RequestMapping("/api/v1/expenses")
 public class ExpenseController {
 
     private final ExpenseService expenseService;
@@ -49,12 +49,12 @@ public class ExpenseController {
 
     @PutMapping("/{id}")
     public ResponseEntity<ExpenseEntity> update(@PathVariable Long id, @RequestBody ExpenseRequestDTO expenseDTO) {
-        Optional<ExpenseEntity> expenseToUpdate = expenseService.getExpenseById(id);
-
-        ExpenseEntity updatedExpense = expenseService.updateExpense(expenseToUpdate, expenseDTO);
-
-        return ResponseEntity.status(HttpStatus.OK).body(updatedExpense);
-
+        try {
+            ExpenseEntity updatedExpense = expenseService.updateExpense(id, expenseDTO);
+            return ResponseEntity.status(HttpStatus.OK).body(updatedExpense);
+        } catch (RuntimeException error) {
+            return ResponseEntity.notFound().build();
+        }
     }
 
     @DeleteMapping("/{id}")

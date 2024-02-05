@@ -21,8 +21,9 @@ public class ExpenseEntity {
     @Column(name = "amount", nullable = false)
     private Double amount;
 
-    @Column(name = "category", nullable = false, length = 30)
-    private String category;
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private CategoryEntity category;
 
     @CreatedDate
     @Column(name = "date", nullable = false)

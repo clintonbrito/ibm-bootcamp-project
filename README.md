@@ -94,4 +94,4 @@ docs/update-readme</code></pre>
 <br>
 
 ## 📝 License
-This project is licensed under the MIT License. See the <a target="_blank" rel="noopener" href="https://github.com/clintonbrito/recipes-app/blob/5c4b1a74ab43a352c393def783f06080b7256088/LICENSE">LICENSE</a> file for details.
+This project is licensed under the MIT License. See the <a target="_blank" rel="noopener" href="https://github.com/clintonbrito/ibm-bootcamp-project/blob/main/LICENSE">LICENSE</a> file for details.

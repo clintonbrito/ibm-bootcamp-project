@@ -4,8 +4,6 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.List;
-
 @Getter
 @Setter
 @Entity
@@ -20,7 +18,4 @@ public class CategoryEntity {
     @Column(name = "name", nullable = false, length = 30)
     private String name;
 
-//    @OneToMany(mappedBy = "category")
-//    @JoinColumn(name = "expense_id", referencedColumnName = "id")
-//    private List<ExpenseEntity> expense;
 }

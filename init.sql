@@ -1,24 +1,39 @@
-DROP TABLE IF EXISTS `expenses`;
+USE db_system;
 
-DROP TABLE IF EXISTS `categories`;
+-- Drop tables if they exist
+DROP TABLE IF EXISTS expenses;
+DROP TABLE IF EXISTS categories;
 
+-- Create categories table
 CREATE TABLE categories (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL
 );
 
+-- Create expenses table with foreign key reference
 CREATE TABLE expenses (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
     description VARCHAR(100) NOT NULL,
-    amount DOUBLE NOT NULL,
-    category_id BIGINT NOT NULL,
+    amount DECIMAL(10, 2) NOT NULL,
     date DATE NOT NULL,
+    category_id BIGINT,
     FOREIGN KEY (category_id) REFERENCES categories(id)
 );
 
-INSERT INTO categories (name) VALUES ("Food");
-INSERT INTO categories (name) VALUES ("Transport");
-INSERT INTO categories (name) VALUES ("Health");
-INSERT INTO categories (name) VALUES ("Education");
-INSERT INTO categories (name) VALUES ("Entertainment");
-INSERT INTO categories (name) VALUES ("Others");
+-- Insert predefined categories
+INSERT INTO categories (name) VALUES
+    ('Food'),
+    ('Transport'),
+    ('Health'),
+    ('Education'),
+    ('Entertainment'),
+    ('Others');
+
+-- Insert sample expenses with category references
+INSERT INTO expenses (description, amount, date, category_id) VALUES
+    ('Almoço no iFood', 30.00, '2023-01-01', 1),
+    ('Uber', 12.50, '2023-01-02', 2),
+    ('Compras na farmácia', 52.35, '2023-01-03', 3),
+    ('Livros na Amazon', 44.75, '2023-01-04', 4),
+    ('Ingresso do cinema', 15.20, '2023-01-05', 5),
+    ('Crédito no celular', 30.00, '2023-01-06', 6);
