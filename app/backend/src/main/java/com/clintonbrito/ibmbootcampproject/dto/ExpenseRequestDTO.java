@@ -15,7 +15,7 @@ public class ExpenseRequestDTO {
 
     private Double amount;
 
-    private String category;
+    private CategoryEntity category;
 
     private LocalDate date;
 

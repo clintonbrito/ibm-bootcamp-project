@@ -16,4 +16,4 @@ COPY --from=build /app-backend/target/ibm-bootcamp-project-0.0.1-SNAPSHOT.jar .
 EXPOSE 8080
 VOLUME /app-backend/logs
 # Substituir pelo nome do meu arquivo JAR
-CMD ["java", "-jar", "ibm-bootcamp-project-0.0.1-SNAPSHOT.jar"]
+CMD ["sh", "-c", "sleep 30 && java -jar ibm-bootcamp-project-0.0.1-SNAPSHOT.jar"]

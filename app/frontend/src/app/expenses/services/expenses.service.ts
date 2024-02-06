@@ -9,7 +9,7 @@ import { Expense } from '../model/expense';
 })
 export class ExpensesService {
 
-  private readonly API = '/api/expenses';
+  private readonly API = '/api/v1/expenses';
 
   constructor(private httpClient: HttpClient) { }
 
