@@ -36,7 +36,7 @@ cd ibm-bootcamp-project</code></pre>
 
 Check the front-end docker logs using the command `docker logs -f app_frontend` which address is running the application and open your browser and access the application through the address below to view the interface locally, for example:
 
-<pre><code>http://172.25.0.4:4200/</code></pre>
+<pre><code>http://localhost:4200/</code></pre>
 
 <br>
 
@@ -52,7 +52,7 @@ Explore the API documentation to understand the available endpoints, request par
 2. **Open Swagger UI:**
    Once the application is running, you can access the Swagger UI by navigating to the following URL in your web browser:
 
-<pre><code>http://localhost:8080/v1/api-ui</code></pre>
+<pre><code>http://localhost:8080/api/v1/ui</code></pre>
 
 3. **Explore Endpoints:**
    In the Swagger UI, you'll find a list of available endpoints along with details about request parameters, expected responses, and sample requests. Use this interface to understand how to interact with the API.
@@ -75,7 +75,7 @@ Feel free to explore and test the API directly from the Swagger UI. If you encou
 
 This project adopts [Gitmoji](https://github.com/carloscuesta/gitmoji) and the commit convention known as [Conventional Commits](https://www.conventionalcommits.org/). This means that we follow a standardized format for our commit messages, making it easier to generate changelogs and adopt semantic versioning.
 
-Example commit message format:
+Example commit messages format:
 
 <pre><code>feat: add login functionality
 fix: resolve issue with user registration
@@ -85,7 +85,7 @@ wip: connecting back-end to front-end</code></pre>
 
 The branches in this project follow a specific pattern to facilitate organization and understanding of ongoing development. Some of the common prefixes used include `feature/`, `bugfix/`, `docs/`:
 
-Example branch name:
+Example branch names:
 
 <pre><code>feature/docker-setup
 bugfix/eslint-errors
